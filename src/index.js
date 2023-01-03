@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
 import * as ReactDOM from 'react-dom/client';
 import './index.css'
 import App from './App'
@@ -12,4 +12,4 @@ import App from './App'
 
 const domNode = document.getElementById('root');
 const root = ReactDOM.createRoot(domNode);
-root.render(<App />);
+root.render(<StrictMode><App /></StrictMode>);

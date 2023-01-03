@@ -1,13 +1,23 @@
+import {useState} from 'react'
+
 //Shortcut: rfce
 function FeedbackItem() {
-  return (
-    <div className="card">
-        <div className="num-display">10</div>
-        <div className="text-display">
-            This is an example of a feedback item.
+    const [rating, setRating] = useState(7)
+    const [text, setText] = useState("This is an example of a feedback item.")
+    const handleClick = () => {
+        setRating((prev) => {
+            return prev + 1
+        })
+    }
+    return (
+        <div className="card">
+            <div className="num-display">{rating}</div>
+            <div className="text-display">
+                {text}
+            </div>
+            <button onClick = {handleClick}>+1</button>
         </div>
-    </div>
-  )
+    )
 }
 
 export default FeedbackItem
